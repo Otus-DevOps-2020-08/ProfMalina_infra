@@ -19,6 +19,7 @@ someinternalhost_IP = 10.129.0.34
 # cloud-testapp
 
 testapp_IP = 84.201.157.109
+
 teatapp_port = 9292
 
 Команда создания инстанса
