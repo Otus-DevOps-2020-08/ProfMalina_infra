@@ -1,9 +1,5 @@
 #!/bin/sh
-echo "Install git"
-sudo apt install -y git
-echo "Deploy project"
-cd $HOME
+apt install -y git
 git clone -b monolith https://github.com/express42/reddit.git
 cd reddit && bundle install
-echo "Start project"
 puma -d
