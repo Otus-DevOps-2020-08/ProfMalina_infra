@@ -6,13 +6,13 @@ users:
       - ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQDAhNw3ATc/2kz+5pGp4+MxocDs36xcg/zGZ6dGx8F49Sqict6vAuVxoQXmG8z3yEvs4eJ8D7vo7quhs73W2Y2WiM5NZ8HU6foqnovlDsrmfJYyDZg6ZSyZL5abNmum/LTEPYr1lQV3AYdJVMPAAm3hqjPA0kQnYjmKiDTpFtVHuMtGdlTrlCoTeEi4H3mHQcPdj1v48eXPuZNVR6UPNnKlT2zhhJO3FS3W7Y3P8iu4LZI9z3xQOWiwYmZIui3MW/AeuwlJsD93wmfFw85mMvCUGuHLK8ldcUNwmY+iCday+1m7GfqBqH1EF7YTyMmoAdTaeP99XFZY9d/kHjlo4Dap appuser
 write_files:
   - path: /home/yc-user/install_ruby.sh
-    permissions: "0751"
+    permissions: "0755"
     content: |
       #!/bin/bash
       apt update
       apt install -y ruby-full ruby-bundler build-essential
   - path: /home/yc-user/install_mongodb.sh
-    permissions: "0751"
+    permissions: "0755"
     content: |
       #!/bin/bash
       wget -qO - https://www.mongodb.org/static/pgp/server-4.2.asc | apt-key add -
@@ -22,7 +22,7 @@ write_files:
       systemctl start mongod
       systemctl enable mongod
   - path: /home/yc-user/deploy.sh
-    permissions: "0751"
+    permissions: "0755"
     content: |
       #!/bin/bash
       apt install -y git
