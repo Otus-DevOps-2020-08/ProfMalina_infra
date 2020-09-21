@@ -28,4 +28,7 @@ yc compute instance create --name reddit-app --hostname reddit-app --memory=4 --
 
 # packer-base
 
-packer build ./ubuntu16.json -var-file=variables.json
+Созданы образы reddit-base и reddit full, добавлен скрипт автоматизации создания ВМ
+
+packer build -var-file=variables.json ./ubuntu16.json
+packer build -var-file=variables.json ./immutable.json
