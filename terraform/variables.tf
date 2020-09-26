@@ -23,3 +23,7 @@ variable service_account_key_file {
 variable private_key_path {
   description = "Path to the private key used for connection"
 }
+variable instsnce_count {
+  description = "Count instance"
+  default     = 2
+}

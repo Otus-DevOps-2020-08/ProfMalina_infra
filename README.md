@@ -32,3 +32,8 @@ yc compute instance create --name reddit-app --hostname reddit-app --memory=4 --
 
 packer build -var-file=variables.json ./ubuntu16.json
 packer build -var-file=variables.json ./immutable.json
+
+# terraform-1
+
+Добавил создание инстансов через terraform
+Добавил создание балансера через terraform и проверил
