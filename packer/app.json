@@ -4,9 +4,9 @@
             "type": "yandex",
             "service_account_key_file": "{{user `service_account_key_file`}}",
             "folder_id": "{{user `folder_id`}}",
-            "source_image_id": "{{user `reddit_image`}}",
-            "image_name": "reddit-full-{{timestamp}}",
-            "image_family": "reddit-full",
+            "source_image_family": "{{user `source_image_family`}}",
+            "image_name": "reddit-app-base-{{timestamp}}",
+            "image_family": "reddit-app-base",
             "ssh_username": "ubuntu",
             "platform_id": "standard-v1",
             "use_ipv4_nat": "true"
@@ -16,6 +16,11 @@
         {
             "type": "shell",
             "script": "scripts/pre_install.sh",
+            "execute_command": "sudo {{.Path}}"
+        },
+        {
+            "type": "shell",
+            "script": "scripts/install_ruby.sh",
             "execute_command": "sudo {{.Path}}"
         },
         {
