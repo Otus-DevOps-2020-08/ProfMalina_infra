@@ -8,7 +8,7 @@ function killService() {
     sudo systemctl kill --kill-who=all $service
 
     # Wait until the status of the service is either exited or killed.
-    while ! (sudo systemctl status "$service" | grep -q "Main.*code=\(exited\|killed\)")
+    while ! (sudo systemctl status "$service" | egrep -q '(dead|failed)')
     do
         sleep 10
     done
@@ -17,8 +17,6 @@ function killService() {
 function disableTimers() {
     sudo systemctl disable apt-daily.timer
     sudo systemctl disable apt-daily-upgrade.timer
-    sudo systemctl mask apt-daily.service
-    sudo systemctl daemon-reload
 }
 
 function killServices() {
