@@ -14,12 +14,12 @@ Host someinternalhost
 	ProxyJump bastion
 
 bastion_IP = 84.201.153.63
+
 someinternalhost_IP = 10.129.0.34
 
 # cloud-testapp
 
 testapp_IP = 84.201.157.109
-
 
 testapp_port = 9292
 
@@ -41,3 +41,9 @@ packer build -var-file=variables.json ./immutable.json
 # terraform-2
 
 Разбил на модули, создал новые образы, создал бакет и поместил на него tfstate, собрал работающее приложение из модулей
+
+# ansible-1
+
+При выполнении ansible-playbook видно были произведены изменения или нет если в них не было необходимости
+
+Например changed=1 или changed=0
