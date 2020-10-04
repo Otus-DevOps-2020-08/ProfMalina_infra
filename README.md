@@ -47,3 +47,12 @@ packer build -var-file=variables.json ./immutable.json
 При выполнении ansible-playbook видно были произведены изменения или нет если в них не было необходимости
 
 Например changed=1 или changed=0
+
+Для генерации inventory.json использовал встроееные в terraform инструменты
+Добавил в output `resource "local_file" "AnsibleInventory"`, и файл болванку inventory.tmpl, после отработки в папку ansible кладется файл inventory.json, команда `ansible all -m ping` отрабатывает
+
+После добавления, если инстансы уже созданы, то надо проверить командой terraform plan, что новый ресурс будет добавлен, а затем использовать команду `terraform apply -auto-approve`
+
+Если надо пересоздать данный файл, то используются следующие команды
+`terraform taint local_file.AnsibleInventory`
+`terraform apply -auto-approve`
