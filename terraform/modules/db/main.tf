@@ -34,8 +34,8 @@ resource "yandex_compute_instance" "db" {
   }
   provisioner "remote-exec" {
     inline = [
-      "sudo sed -i 's/127.0.0.1/127.0.0.1,${self.network_interface.0.ip_address}/' /etc/mongod.conf",
-      "sudo service mongod restart",
+      # "sudo sed -i 's/127.0.0.1/127.0.0.1,${self.network_interface.0.ip_address}/' /etc/mongod.conf",
+      # "sudo service mongod restart",
       "sudo systemctl enable apt-daily.timer",
       "sudo systemctl enable apt-daily-upgrade.timer"
     ]

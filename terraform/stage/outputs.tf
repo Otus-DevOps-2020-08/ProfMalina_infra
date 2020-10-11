@@ -4,6 +4,9 @@ output "external_ip_address_app" {
 output "external_ip_address_db" {
   value = module.db.external_ip_address_db
 }
+output "internal_ip_address_db" {
+  value = module.db.internal_ip_address_db
+}
 
 ### The Ansible inventory file
 resource "local_file" "AnsibleInventory" {
@@ -14,4 +17,12 @@ resource "local_file" "AnsibleInventory" {
  }
  )
  filename = "../../ansible/inventory.json"
+}
+resource "local_file" "AnsibleApp" {
+ content = templatefile("app.tmpl",
+ {
+  internal_ip_address_db = module.db.internal_ip_address_db
+ }
+ )
+ filename = "../../ansible/app.yml"
 }
