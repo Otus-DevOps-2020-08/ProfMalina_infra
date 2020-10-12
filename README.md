@@ -56,3 +56,13 @@ packer build -var-file=variables.json ./immutable.json
 Если надо пересоздать данный файл, то используются следующие команды
 `terraform taint local_file.AnsibleInventory`
 `terraform apply -auto-approve`
+
+# ansible-2
+
+Создал плейбуки разных форматов
+
+Добавил в генерацию inventory.json ip_db и переменную в плейбуки
+
+Собрал новые образы с использованием Packer+Ansible
+
+Поднял инстансы на новых образах, задеплоил приложение с помощью плэйбука site.yml
