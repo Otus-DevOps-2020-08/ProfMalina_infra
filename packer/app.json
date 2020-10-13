@@ -11,5 +11,11 @@
             "platform_id": "standard-v1",
             "use_ipv4_nat": "true"
         }
+    ],
+    "provisioners": [
+        {
+        "type": "ansible",
+        "playbook_file": "ansible/packer_app.yml"
+        }
     ]
 }
