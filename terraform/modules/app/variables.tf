@@ -14,3 +14,7 @@ variable db_ip {
 variable private_key_path {
   description = "private_key_path"
 }
+variable instsnce_count {
+  description = "Count instance"
+  default     = 1
+}

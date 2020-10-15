@@ -12,10 +12,11 @@ output "internal_ip_address_db" {
 resource "local_file" "AnsibleInventory" {
  content = templatefile("inventory.tmpl",
  {
+  name_app = module.app.name_app,
   external_ip_address_app = module.app.external_ip_address_app,
   external_ip_address_db = module.db.external_ip_address_db,
   internal_ip_address_db = module.db.internal_ip_address_db
  }
  )
- filename = "../../ansible/inventory.json"
+ filename = "../../ansible/environments/stage/inventory"
 }
