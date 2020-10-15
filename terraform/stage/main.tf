@@ -17,12 +17,11 @@ module "app" {
   subnet_id        = module.vpc.redit_subnet
   private_key_path = var.private_key_path
   db_ip            = module.db.external_ip_address_db
-  # sec_group = module.vpc.group1
 }
 module "db" {
   source           = "../modules/db"
   public_key_path  = var.public_key_path
   db_disk_image    = var.db_disk_image
-   subnet_id       = module.vpc.redit_subnet
+  subnet_id        = module.vpc.redit_subnet
   private_key_path = var.private_key_path
 }
