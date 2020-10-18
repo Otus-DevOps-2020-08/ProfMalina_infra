@@ -1,6 +1,6 @@
 resource "yandex_compute_instance" "app" {
   count = var.instsnce_count
-  name = "reddit-app-${count.index}"
+  name  = "reddit-app-${count.index}"
   labels = {
     tags = "reddit-app-${count.index}"
   }
@@ -16,7 +16,6 @@ resource "yandex_compute_instance" "app" {
   network_interface {
     subnet_id = var.subnet_id
     nat       = true
-    # security_group_ids = var.sec_group
   }
   metadata = {
     ssh-keys = "ubuntu:${file(var.public_key_path)}"

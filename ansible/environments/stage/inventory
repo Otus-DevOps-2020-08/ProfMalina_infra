@@ -1,4 +1,0 @@
-[app]
-reddit-app-0 ansible_host=130.193.48.91 db_ip=192.168.10.6
-[db]
-dbserver ansible_host=84.201.134.251

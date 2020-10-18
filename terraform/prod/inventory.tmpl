@@ -1,19 +1,6 @@
-{
-  "app": {
-    "hosts": {
-      "appserver": {
-        %{ for index in external_ip_address_app ~}
-        "ansible_host": "${index}",
-        %{ endfor ~}
-        "db_ip": "${internal_ip_address_db}"
-      }
-    }
-  },
-  "db": {
-    "hosts": {
-      "dbserver": {
-        "ansible_host": "${external_ip_address_db}"
-      }
-    }
-  }
-}
+[app]
+%{ for index, ip in external_ip_address_app ~}
+${name_app[index]} ansible_host=${ip} db_ip=${internal_ip_address_db}
+%{ endfor ~}
+[db]
+dbserver ansible_host=${external_ip_address_db}

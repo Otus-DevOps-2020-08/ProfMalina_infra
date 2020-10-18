@@ -10,13 +10,13 @@ output "internal_ip_address_db" {
 
 ### The Ansible inventory file
 resource "local_file" "AnsibleInventory" {
- content = templatefile("inventory.tmpl",
- {
-  name_app = module.app.name_app,
-  external_ip_address_app = module.app.external_ip_address_app,
-  external_ip_address_db = module.db.external_ip_address_db,
-  internal_ip_address_db = module.db.internal_ip_address_db
- }
- )
- filename = "../../ansible/environments/stage/inventory"
+  content = templatefile("inventory.tmpl",
+    {
+      name_app                = module.app.name_app,
+      external_ip_address_app = module.app.external_ip_address_app,
+      external_ip_address_db  = module.db.external_ip_address_db,
+      internal_ip_address_db  = module.db.internal_ip_address_db
+    }
+  )
+  filename = "../../ansible/environments/stage/inventory"
 }

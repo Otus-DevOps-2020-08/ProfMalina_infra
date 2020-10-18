@@ -1,3 +1,5 @@
+![Build Status](https://img.shields.io/travis/ProfMalina/Otus-DevOps-2020-08%20/%20ProfMalina_infra)
+
 # ProfMalina_infra
 ProfMalina Infra repository
 
