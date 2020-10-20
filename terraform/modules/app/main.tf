@@ -1,7 +1,8 @@
 resource "yandex_compute_instance" "app" {
-  name = "reddit-app"
+  count = var.instsnce_count
+  name  = "reddit-app-${count.index}"
   labels = {
-    tags = "reddit-app"
+    tags = "reddit-app-${count.index}"
   }
   resources {
     cores  = 2
@@ -25,29 +26,5 @@ resource "yandex_compute_instance" "app" {
     user        = "ubuntu"
     agent       = false
     private_key = file(var.private_key_path)
-  }
-  # provisioner "file" {
-  #   source      = "../files/puma.service"
-  #   destination = "/tmp/puma.service"
-  # }
-  # provisioner "remote-exec" {
-  #   inline = [
-  #     "sudo sed -i 's/puma/DATABASE_URL=${var.db_ip} puma/' /tmp/puma.service",
-  #   ]
-  # }
-  provisioner "remote-exec" {
-    script = "../files/pre_install.sh"
-  }
-  provisioner "remote-exec" {
-    script = "../files/deploy.sh"
-  }
-  provisioner "remote-exec" {
-    inline = [
-      # "sudo systemctl daemon-reload",
-      # "sudo systemctl enable puma.service",
-      # "sudo systemctl start puma.service",
-      "sudo systemctl enable apt-daily.timer",
-      "sudo systemctl enable apt-daily-upgrade.timer"
-    ]
   }
 }

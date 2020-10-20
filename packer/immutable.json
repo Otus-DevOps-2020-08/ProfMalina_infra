@@ -5,6 +5,7 @@
             "service_account_key_file": "{{user `service_account_key_file`}}",
             "folder_id": "{{user `folder_id`}}",
             "source_image_id": "{{user `reddit_image`}}",
+            "source_image_family": "{{user `source_image_family`}}",
             "image_name": "reddit-full-{{timestamp}}",
             "image_family": "reddit-full",
             "ssh_username": "ubuntu",
@@ -15,17 +16,17 @@
     "provisioners": [
         {
             "type": "shell",
-            "script": "scripts/pre_install.sh",
+            "script": "packer/scripts/pre_install.sh",
             "execute_command": "sudo {{.Path}}"
         },
         {
             "type": "shell",
-            "script": "files/deploy.sh",
+            "script": "packer/files/deploy.sh",
             "execute_command": "sudo {{.Path}}"
         },
         {
             "type": "file",
-            "source": "files/puma.service",
+            "source": "packer/files/puma.service",
             "destination": "~/puma.service"
         },
         {

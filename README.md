@@ -1,3 +1,6 @@
+[![Build Status](https://travis-ci.com/Otus-DevOps-2020-08/ProfMalina_infra.svg?branch=master)](https://travis-ci.com/Otus-DevOps-2020-08/ProfMalina_infra)
+
+
 # ProfMalina_infra
 ProfMalina Infra repository
 
@@ -66,3 +69,17 @@ packer build -var-file=variables.json ./immutable.json
 Собрал новые образы с использованием Packer+Ansible
 
 Поднял инстансы на новых образах, задеплоил приложение с помощью плэйбука site.yml
+
+# ansible-3
+
+Плейбуки разделены на роли
+
+Добавлены два окружения
+
+Использован Ansible Vault для хранения секретов
+
+Добавлена генерация inventory для обоих окружений ansible
+
+Добавлены проверки для TravisCI
+
+Добавил бэйдж в README.MD
