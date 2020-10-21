@@ -1,0 +1,16 @@
+---
+# - name: Wait for automatic system updates
+#   shell: while sudo fuser /var/lib/dpkg/{{ item }} >/dev/null 2>&1; do sleep 1; done;
+#   with_items:
+#     - lock
+#     - lock-frontend
+
+- name: Install ruby, bundler and other soft
+  apt: "name={{ item }} state=present update_cache=yes"
+  with_items:
+  - apt-transport-https
+  - ruby-full
+  - ruby-bundler
+  - git
+  - build-essential
+  tags: ruby

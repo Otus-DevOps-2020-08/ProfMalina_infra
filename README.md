@@ -83,3 +83,6 @@ packer build -var-file=variables.json ./immutable.json
 Добавлены проверки для TravisCI
 
 Добавил бэйдж в README.MD
+
+# ansible-4
+`source venv/bin/activate`
