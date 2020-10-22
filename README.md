@@ -85,4 +85,7 @@ packer build -var-file=variables.json ./immutable.json
 Добавил бэйдж в README.MD
 
 # ansible-4
-`source venv/bin/activate`
+
+Доработал роли, проверил работу в vagrant и в terraform
+
+Активация virtualenv `source venv/bin/activate`
