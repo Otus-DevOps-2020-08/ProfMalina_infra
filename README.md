@@ -86,6 +86,8 @@ packer build -var-file=variables.json ./immutable.json
 
 # ansible-4
 
+Перевёз работу на ubuntu с виртуалок, иначе vagrant не хотел работать
+
 Доработал роли, проверил работу в vagrant и в terraform
 
 Активация virtualenv `source venv/bin/activate`
