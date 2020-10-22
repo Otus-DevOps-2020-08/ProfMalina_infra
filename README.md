@@ -91,3 +91,5 @@ packer build -var-file=variables.json ./immutable.json
 Доработал роли, проверил работу в vagrant и в terraform
 
 Активация virtualenv `source venv/bin/activate`
+
+Установка роли db из репозитория `ansible-galaxy install -r environments/stage/requirements.yml`
