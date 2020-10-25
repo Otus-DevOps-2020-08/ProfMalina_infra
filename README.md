@@ -93,3 +93,7 @@ packer build -var-file=variables.json ./immutable.json
 Активация virtualenv `source venv/bin/activate`
 
 Установка роли db из репозитория `ansible-galaxy install -r environments/stage/requirements.yml`
+
+Настроил и проверил molecule
+
+Переделал проверку при PR, добавил создание docker машины, если её нет

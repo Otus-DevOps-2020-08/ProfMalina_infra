@@ -5,7 +5,7 @@ if [ "$BRANCH" == "master" ]; then
 	DOCKER_CHECK=`docker ps --format '{{.Names}}'`
 	echo $DOCKER_CHECK
 	if $DOCKER_CHECK; then
-		echo Docker runing
+		echo Docker running
 	else
 		docker network create hw-test-net
 		docker run -d -v $(pwd):/srv -v /var/run/docker.sock:/tmp/docker.sock \
