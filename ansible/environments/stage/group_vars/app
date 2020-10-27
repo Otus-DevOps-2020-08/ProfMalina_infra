@@ -1,1 +1,2 @@
 db_host: "{{ db_ip }}"
+deploy_user: "ubuntu"

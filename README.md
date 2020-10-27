@@ -83,3 +83,17 @@ packer build -var-file=variables.json ./immutable.json
 Добавлены проверки для TravisCI
 
 Добавил бэйдж в README.MD
+
+# ansible-4
+
+Перевёз работу на ubuntu с виртуалок, иначе vagrant не хотел работать
+
+Доработал роли, проверил работу в vagrant и в terraform
+
+Активация virtualenv `source venv/bin/activate`
+
+Установка роли db из репозитория `ansible-galaxy install -r environments/stage/requirements.yml`
+
+Настроил и проверил molecule
+
+Переделал проверку при PR, добавил создание docker машины, если её нет

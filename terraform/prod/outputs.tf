@@ -18,5 +18,5 @@ resource "local_file" "AnsibleInventory" {
       internal_ip_address_db  = module.db.internal_ip_address_db
     }
   )
-  filename = "../../ansible/environments/stage/inventory"
+  filename = "../../ansible/environments/prod/inventory"
 }
